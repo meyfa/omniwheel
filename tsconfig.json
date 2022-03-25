@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "lib": ["es2020"],
+    "module": "es2020",
+    "target": "es2020",
+    "moduleResolution": "Node",
+    "strict": true,
+    "declaration": true,
+    "outDir": "./dist"
+  },
+  "exclude": [
+    "test",
+    "dist",
+    "node_modules"
+  ]
+}

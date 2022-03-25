@@ -1,0 +1,37 @@
+{
+  "name": "omniwheel",
+  "version": "0.0.0",
+  "description": "Boilerplate reduction for backend and microservices. Scale your application easily in any direction.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc",
+    "lint": "tsc --noEmit",
+    "test": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meyfa/omniwheel.git"
+  },
+  "keywords": [
+    "backend",
+    "microservice",
+    "api-server"
+  ],
+  "author": "Fabian Meyer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meyfa/omniwheel/issues"
+  },
+  "homepage": "https://github.com/meyfa/omniwheel#readme",
+  "engines": {
+    "node": ">=16",
+    "npm": ">=7"
+  },
+  "devDependencies": {
+    "rimraf": "3.0.2",
+    "typescript": "4.6.3"
+  }
+}
