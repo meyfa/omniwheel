@@ -1,4 +1,4 @@
-import express from "express"
+import express from 'express'
 import chai, { expect } from 'chai'
 import chaiAsPromised from 'chai-as-promised'
 import * as http from 'http'
