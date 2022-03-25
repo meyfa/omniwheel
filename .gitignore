@@ -1,4 +1,15 @@
+# OS and IDE files
 .DS_Store
 .idea
+
+# dependencies
 node_modules
+
+# build files
 dist
+
+# test framework
+coverage
+lcov.info
+tmp
+.nyc_output
