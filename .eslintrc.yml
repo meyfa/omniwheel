@@ -1,0 +1,22 @@
+extends:
+  - 'standard-with-typescript'
+  - 'plugin:jsdoc/recommended'
+
+parserOptions:
+  project: './tsconfig.eslint.json'
+
+rules:
+  'import/extensions': [error, always]
+  'jsdoc/require-param-type': off
+  'jsdoc/require-returns-type': off
+  'jsdoc/no-types': [ 'error', { contexts: [ 'TSPropertySignature' ] } ]
+  'jsdoc/require-returns-description': [ 'error', { contexts: [ 'TSPropertySignature' ] } ]
+  'jsdoc/require-param-description': [ 'error', { contexts: [ 'TSPropertySignature' ] } ]
+
+overrides:
+  - files: 'test/**/*'
+    env:
+      mocha: true
+    rules:
+      no-unused-expressions: off
+      '@typescript-eslint/no-unused-expressions': off
