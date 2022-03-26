@@ -18,5 +18,6 @@ overrides:
     env:
       mocha: true
     rules:
+      'jsdoc/require-jsdoc': off
       no-unused-expressions: off
       '@typescript-eslint/no-unused-expressions': off
