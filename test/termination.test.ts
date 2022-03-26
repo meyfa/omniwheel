@@ -20,24 +20,26 @@ describe('/lib/termination', function () {
   const FIXTURE_PATH = url.fileURLToPath(new URL('termination-fixture.ts', import.meta.url))
 
   async function performSignalTest (signal: NodeJS.Signals): Promise<{ fixture: ChildProcess, outLines: string[] }> {
-    // necessary precondition for running the fixture (should be true since tests are also running via ts-node)
-    expect(process.execArgv).to.deep.equal(['--loader=ts-node/esm'])
-
-    // { silent: true } makes available stdout and stderr
-    const fixture = fork(FIXTURE_PATH, { silent: true })
+    const fixture = fork(FIXTURE_PATH, {
+      // Make available stdout and stderr
+      silent: true,
+      // Run with ts-node loader
+      execArgv: ['--loader=ts-node/esm']
+    })
 
     expect(fixture.stdout).to.be.an('object')
     expect(fixture.stderr).to.be.an('object')
 
     const outLines: string[] = []
     const errLines: string[] = []
-    fixture.stdout?.on('data', (chunk) => outLines.push(chunk.toString().trim()))
-    fixture.stderr?.on('data', (chunk) => {
-      const errLine = chunk.toString().trim()
-      // These warnings are emitted due to ts-node
-      if (!/--experimental-loader|--trace-warnings/.test(errLine)) {
-        errLines.push(errLine)
-      }
+    fixture.stdout?.on('data', (chunk: Buffer) => {
+      const lines = chunk.toString().split('\n').filter(line => line.length > 0)
+      outLines.push(...lines)
+    })
+    fixture.stderr?.on('data', (chunk: Buffer) => {
+      // Filter out warnings emitted due to presence of ts-node loader
+      const lines = chunk.toString().split('\n').filter(line => line.length > 0 && !/--experimental-loader|--trace-warnings/.test(line))
+      errLines.push(...lines)
     })
 
     await waitUntil(() => (outLines.length + errLines.length) > 0, 6000)
