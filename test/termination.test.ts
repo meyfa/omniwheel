@@ -38,7 +38,7 @@ describe('/lib/termination', function () {
     })
     fixture.stderr?.on('data', (chunk: Buffer) => {
       // Filter out warnings emitted due to presence of ts-node loader
-      const lines = chunk.toString().split('\n').filter(line => line.length > 0 && !/--experimental-loader|--trace-warnings/.test(line))
+      const lines = chunk.toString().split('\n').filter(line => line.length > 0 && !/ExperimentalWarning|--experimental-loader|--trace-warnings/.test(line))
       errLines.push(...lines)
     })
 
