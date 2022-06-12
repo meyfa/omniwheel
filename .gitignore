@@ -3,13 +3,13 @@
 .idea
 
 # dependencies
-node_modules
+node_modules/
 
 # build files
-dist
+/dist
 
 # test framework
-coverage
-lcov.info
-tmp
-.nyc_output
+/coverage
+/lcov.info
+/tmp
+/.nyc_output
