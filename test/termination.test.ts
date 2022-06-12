@@ -16,7 +16,7 @@ async function waitUntil (condition: () => boolean, timeout: number): Promise<vo
   }
 }
 
-describe('/lib/termination', function () {
+describe('termination.ts', function () {
   const FIXTURE_PATH = url.fileURLToPath(new URL('termination-fixture.ts', import.meta.url))
 
   async function performSignalTest (signal: NodeJS.Signals): Promise<{ fixture: ChildProcess, outLines: string[] }> {

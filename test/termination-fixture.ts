@@ -1,4 +1,4 @@
-import { onTermination } from '../lib/termination.js'
+import { onTermination } from '../src/termination.js'
 
 /*
  * This file is started as its own process by termination.test.ts
