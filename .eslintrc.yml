@@ -1,12 +1,11 @@
 extends:
-  - 'standard-with-typescript'
+  - '@meyfa/eslint-config'
   - 'plugin:jsdoc/recommended'
 
 parserOptions:
   project: './tsconfig.eslint.json'
 
 rules:
-  'import/extensions': [error, always]
   'jsdoc/require-param-type': off
   'jsdoc/require-returns-type': off
   'jsdoc/no-types': [ 'error', { contexts: [ 'TSPropertySignature' ] } ]
@@ -15,9 +14,5 @@ rules:
 
 overrides:
   - files: 'test/**/*'
-    env:
-      mocha: true
     rules:
       'jsdoc/require-jsdoc': off
-      no-unused-expressions: off
-      '@typescript-eslint/no-unused-expressions': off
