@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/meyfa/omniwheel/compare/v0.2.0...v0.3.0) (2022-07-17)
+
+
+### Features
+
+* Export HttpStatus enum ([#39](https://github.com/meyfa/omniwheel/issues/39)) ([eb340bb](https://github.com/meyfa/omniwheel/commit/eb340bb4c0577a0a9163eb37ced58eefdaf83616))
+
 ## [0.2.0](https://github.com/meyfa/omniwheel/compare/v0.1.0...v0.2.0) (2022-03-26)
 
 * feat: Implement onTermination() for process exit signal handling ([#12](https://github.com/meyfa/omniwheel/pull/12))
