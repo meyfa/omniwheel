@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.0](https://github.com/meyfa/omniwheel/compare/v0.3.0...v0.4.0) (2022-08-29)
+
+
+### Features
+
+* Implement promisifiedListen(), promisifiedClose() generically ([#50](https://github.com/meyfa/omniwheel/issues/50)) ([afaa253](https://github.com/meyfa/omniwheel/commit/afaa253ad81c97660ecffb2f3f7557ae5150d555))
+
+
+### Bug Fixes
+
+* Remove Express from peerDependencies but keep as dev ([#52](https://github.com/meyfa/omniwheel/issues/52)) ([f748672](https://github.com/meyfa/omniwheel/commit/f7486726df958d48a5222c33ac9028f864162329))
+
 ## [0.3.0](https://github.com/meyfa/omniwheel/compare/v0.2.0...v0.3.0) (2022-07-17)
 
 
