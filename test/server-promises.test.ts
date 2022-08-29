@@ -1,12 +1,12 @@
-import express from 'express'
 import chai, { expect } from 'chai'
 import chaiAsPromised from 'chai-as-promised'
-import * as http from 'http'
-import { promisifiedClose, promisifiedListen } from '../src/express-promises.js'
+import http from 'http'
+import express from 'express'
+import { promisifiedClose, promisifiedListen } from '../src/server-promises.js'
 
 chai.use(chaiAsPromised)
 
-describe('express-promises.ts', function () {
+describe('server-promises.ts', function () {
   const serversToCleanUp: http.Server[] = []
 
   afterEach(async function () {
