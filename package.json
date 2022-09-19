@@ -40,7 +40,7 @@
     "@meyfa/eslint-config": "2.0.2",
     "@types/chai": "4.3.3",
     "@types/chai-as-promised": "7.1.5",
-    "@types/express": "4.17.13",
+    "@types/express": "4.17.14",
     "@types/mocha": "9.1.1",
     "@types/node": "17.0.23",
     "c8": "7.12.0",
