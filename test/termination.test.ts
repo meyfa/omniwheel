@@ -1,10 +1,7 @@
-import chai, { expect } from 'chai'
-import chaiAsPromised from 'chai-as-promised'
+import assert from 'node:assert'
 import { ChildProcess, fork } from 'child_process'
 import { setTimeout as delay } from 'timers/promises'
 import * as url from 'url'
-
-chai.use(chaiAsPromised)
 
 async function waitUntil (condition: () => boolean, timeout: number): Promise<void> {
   const start = Date.now()
@@ -27,8 +24,8 @@ describe('termination.ts', function () {
       execArgv: ['--loader=ts-node/esm']
     })
 
-    expect(fixture.stdout).to.be.an('object')
-    expect(fixture.stderr).to.be.an('object')
+    assert.ok(fixture.stdout, 'expected child process to have stdout')
+    assert.ok(fixture.stderr, 'expected child process to have stderr')
 
     const outLines: string[] = []
     const errLines: string[] = []
@@ -43,10 +40,10 @@ describe('termination.ts', function () {
     })
 
     await waitUntil(() => (outLines.length + errLines.length) > 0, 6000)
-    expect(fixture.kill(signal)).to.equal(true)
+    assert.ok(fixture.kill(signal), 'expected kill to succeed')
     await waitUntil(() => fixture.exitCode != null || fixture.signalCode != null, 4000)
 
-    expect(errLines).to.deep.equal([])
+    assert.strictEqual(errLines.length, 0)
 
     return { fixture, outLines }
   }
@@ -63,8 +60,8 @@ describe('termination.ts', function () {
 
     const { fixture, outLines } = await performSignalTest('SIGTERM')
 
-    expect(fixture.exitCode).to.equal(143)
-    expect(outLines).to.deep.equal([
+    assert.strictEqual(fixture.exitCode, 143)
+    assert.deepStrictEqual(outLines, [
       'started',
       't2: SIGTERM',
       't1: SIGTERM',
@@ -84,8 +81,8 @@ describe('termination.ts', function () {
 
     const { fixture, outLines } = await performSignalTest('SIGINT')
 
-    expect(fixture.exitCode).to.equal(130)
-    expect(outLines).to.deep.equal([
+    assert.strictEqual(fixture.exitCode, 130)
+    assert.deepStrictEqual(outLines, [
       'started',
       't2: SIGINT',
       't1: SIGINT',
@@ -105,9 +102,9 @@ describe('termination.ts', function () {
 
     const { fixture, outLines } = await performSignalTest('SIGKILL')
 
-    expect(fixture.exitCode).to.equal(null)
-    expect(fixture.signalCode).to.equal('SIGKILL')
-    expect(outLines).to.deep.equal([
+    assert.strictEqual(fixture.exitCode, null)
+    assert.strictEqual(fixture.signalCode, 'SIGKILL')
+    assert.deepStrictEqual(outLines, [
       'started'
     ])
   })
