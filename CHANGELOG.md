@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/meyfa/omniwheel/compare/v0.4.0...v0.4.1) (2023-07-23)
+
+
+### Miscellaneous Chores
+
+* Publish with provenance ([#121](https://github.com/meyfa/omniwheel/issues/121)) ([051a6f1](https://github.com/meyfa/omniwheel/commit/051a6f1bd7ed378602eb1c0a279b55d992dc8ab7))
+
 ## [0.4.0](https://github.com/meyfa/omniwheel/compare/v0.3.0...v0.4.0) (2022-08-29)
 
 
