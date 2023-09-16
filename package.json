@@ -37,7 +37,7 @@
     "npm": ">=7"
   },
   "devDependencies": {
-    "@meyfa/eslint-config": "4.0.1",
+    "@meyfa/eslint-config": "5.0.0",
     "@types/express": "4.17.17",
     "@types/mocha": "10.0.1",
     "@types/node": "18.17.17",
