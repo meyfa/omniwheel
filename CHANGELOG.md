@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.2](https://github.com/meyfa/omniwheel/compare/v0.4.1...v0.4.2) (2023-09-16)
+
+
+### Bug Fixes
+
+* Use 'node:' protocol in imports ([#137](https://github.com/meyfa/omniwheel/issues/137)) ([19166a2](https://github.com/meyfa/omniwheel/commit/19166a256be5d4ca0bb5bcd1efac74906baf8289))
+
 ## [0.4.1](https://github.com/meyfa/omniwheel/compare/v0.4.0...v0.4.1) (2023-07-23)
 
 
