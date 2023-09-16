@@ -1,4 +1,4 @@
-import EventEmitter from 'events'
+import EventEmitter from 'node:events'
 
 interface Listenable<ServerType extends EventEmitter> {
   listen: ((port: number, hostname: string, callback?: () => void) => ServerType) &
