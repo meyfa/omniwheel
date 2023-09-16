@@ -1,7 +1,7 @@
 import assert from 'node:assert'
-import { ChildProcess, fork } from 'child_process'
-import { setTimeout as delay } from 'timers/promises'
-import * as url from 'url'
+import { ChildProcess, fork } from 'node:child_process'
+import { setTimeout as delay } from 'node:timers/promises'
+import * as url from 'node:url'
 
 async function waitUntil (condition: () => boolean, timeout: number): Promise<void> {
   const start = Date.now()

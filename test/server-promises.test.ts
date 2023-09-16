@@ -1,5 +1,5 @@
 import assert from 'node:assert'
-import http from 'http'
+import http from 'node:http'
 import express from 'express'
 import { promisifiedClose, promisifiedListen } from '../src/server-promises.js'
 

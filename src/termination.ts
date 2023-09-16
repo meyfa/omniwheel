@@ -1,4 +1,4 @@
-import { constants } from 'os'
+import { constants } from 'node:os'
 
 export type TerminationCallback = (signal: NodeJS.Signals) => (void | Promise<void>)
 
