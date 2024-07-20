@@ -2,6 +2,9 @@ import { constants } from 'node:os'
 
 export type TerminationCallback = (signal: NodeJS.Signals) => (void | Promise<void>)
 
+/**
+ * A class to handle termination signals and run registered callbacks.
+ */
 class Terminator {
   private exiting = false
   private readonly callbacks: TerminationCallback[] = []

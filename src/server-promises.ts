@@ -1,11 +1,17 @@
 import EventEmitter from 'node:events'
 
+/**
+ * Interface for Express-like objects that can be started with a listen() method.
+ */
 interface Listenable<ServerType extends EventEmitter> {
   listen: ((port: number, hostname: string, callback?: () => void) => ServerType) &
   ((port: number, callback?: () => void) => ServerType) &
   ((callback?: () => void) => ServerType)
 }
 
+/**
+ * Interface for Express-like objects that can be closed with a close() method.
+ */
 interface Closable extends EventEmitter {
   close: (cb: (err?: Error) => void) => any
 }
