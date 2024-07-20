@@ -1,18 +1,9 @@
 extends:
   - '@meyfa/eslint-config'
-  - 'plugin:jsdoc/recommended'
 
 parserOptions:
   project: './tsconfig.lint.json'
 
-rules:
-  'jsdoc/require-param-type': off
-  'jsdoc/require-returns-type': off
-  'jsdoc/no-types': [ 'error', { contexts: [ 'TSPropertySignature' ] } ]
-  'jsdoc/require-returns-description': [ 'error', { contexts: [ 'TSPropertySignature' ] } ]
-  'jsdoc/require-param-description': [ 'error', { contexts: [ 'TSPropertySignature' ] } ]
-
 overrides:
-  - files: 'test/**/*'
-    rules:
-      'jsdoc/require-jsdoc': off
+  - files: ['src/**/*.ts']
+    extends: '@meyfa/eslint-config/jsdoc'
