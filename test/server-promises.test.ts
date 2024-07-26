@@ -44,7 +44,7 @@ describe('server-promises.ts', function () {
       const server = http.createServer().listen(3333)
       serversToCleanUp.push(server)
       assert.strictEqual(server.listening, true)
-      assert.ok(server.address())
+      assert.ok(server.address() != null)
       await promisifiedClose(server)
       assert.strictEqual(server.listening, false)
       assert.strictEqual(server.address(), null)

@@ -24,8 +24,8 @@ describe('termination.ts', function () {
       execArgv: ['--loader=ts-node/esm', '--no-warnings']
     })
 
-    assert.ok(fixture.stdout, 'expected child process to have stdout')
-    assert.ok(fixture.stderr, 'expected child process to have stderr')
+    assert.ok(fixture.stdout != null, 'expected child process to have stdout')
+    assert.ok(fixture.stderr != null, 'expected child process to have stderr')
 
     const outLines: string[] = []
     const errLines: string[] = []
