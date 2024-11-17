@@ -11,9 +11,9 @@
   "scripts": {
     "clean": "node -e \"fs.rmSync('./dist',{force:true,recursive:true})\"",
     "build": "npm run clean && tsc",
-    "lint": "tsc --noEmit -p tsconfig.lint.json && eslint --ignore-path .gitignore .",
-    "lint-fix": "tsc --noEmit -p tsconfig.lint.json && eslint --fix --ignore-path .gitignore .",
-    "test": "mocha --recursive \"test/**/*.test.*\"",
+    "lint": "tsc --noEmit -p tsconfig.lint.json && eslint .",
+    "lint-fix": "tsc --noEmit -p tsconfig.lint.json && eslint --fix .",
+    "test": "mocha --require tsx --recursive \"test/**/*.test.*\"",
     "coverage": "c8 --all --src=src --reporter=text --reporter=lcov npm test",
     "prepack": "npm run build"
   },
@@ -37,15 +37,15 @@
     "npm": ">=9"
   },
   "devDependencies": {
-    "@meyfa/eslint-config": "7.0.0",
+    "@meyfa/eslint-config": "8.0.0",
     "@types/express": "5.0.0",
     "@types/mocha": "10.0.9",
     "@types/node": "22.9.0",
     "c8": "10.1.2",
-    "eslint": "8.57.1",
+    "eslint": "9.14.0",
     "express": "4.21.1",
     "mocha": "10.8.2",
-    "ts-node": "10.9.2",
+    "tsx": "4.19.2",
     "typescript": "5.6.3"
   }
 }

@@ -5,8 +5,8 @@ import EventEmitter from 'node:events'
  */
 interface Listenable<ServerType extends EventEmitter> {
   listen: ((port: number, hostname: string, callback?: () => void) => ServerType) &
-  ((port: number, callback?: () => void) => ServerType) &
-  ((callback?: () => void) => ServerType)
+    ((port: number, callback?: () => void) => ServerType) &
+    ((callback?: () => void) => ServerType)
 }
 
 /**

@@ -20,8 +20,7 @@ describe('termination.ts', function () {
     const fixture = fork(FIXTURE_PATH, {
       // Make available stdout and stderr
       silent: true,
-      // Run with ts-node loader but prevent it from causing an ExperimentalWarning, which would invalidate the tests
-      execArgv: ['--loader=ts-node/esm', '--no-warnings']
+      execArgv: ['--import=tsx', '--no-warnings']
     })
 
     assert.ok(fixture.stdout != null, 'expected child process to have stdout')
@@ -29,13 +28,12 @@ describe('termination.ts', function () {
 
     const outLines: string[] = []
     const errLines: string[] = []
-    fixture.stdout?.on('data', (chunk: Buffer) => {
-      const lines = chunk.toString().split('\n').filter(line => line.length > 0)
+    fixture.stdout.on('data', (chunk: Buffer) => {
+      const lines = chunk.toString().split('\n').filter((line) => line.length > 0)
       outLines.push(...lines)
     })
-    fixture.stderr?.on('data', (chunk: Buffer) => {
-      // Filter out warnings emitted due to presence of ts-node loader
-      const lines = chunk.toString().split('\n').filter(line => line.length > 0)
+    fixture.stderr.on('data', (chunk: Buffer) => {
+      const lines = chunk.toString().split('\n').filter((line) => line.length > 0)
       errLines.push(...lines)
     })
 
