@@ -33,8 +33,8 @@
   },
   "homepage": "https://github.com/meyfa/omniwheel#readme",
   "engines": {
-    "node": ">=16",
-    "npm": ">=7"
+    "node": ">=20",
+    "npm": ">=9"
   },
   "devDependencies": {
     "@meyfa/eslint-config": "7.0.0",
