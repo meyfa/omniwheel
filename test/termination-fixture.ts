@@ -6,7 +6,7 @@ import { onTermination } from '../src/termination.js'
 
 onTermination((signal) => console.log(`t0: ${signal}`))
 onTermination(async (signal) => {
-  await new Promise(resolve => setTimeout(resolve, 100))
+  await new Promise((resolve) => setTimeout(resolve, 100))
   console.log(`t1: ${signal}`)
 })
 onTermination((signal) => console.log(`t2: ${signal}`))
