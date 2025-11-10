@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.5.0](https://github.com/meyfa/omniwheel/compare/v0.4.2...v0.5.0) (2025-11-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* Drop support for Node.js 18 and earlier
+
+### Miscellaneous Chores
+
+* Drop support for Node.js 18 and earlier ([893b225](https://github.com/meyfa/omniwheel/commit/893b225bb255e17789a5db66bfca4c8f34c34284))
+
 ## [0.4.2](https://github.com/meyfa/omniwheel/compare/v0.4.1...v0.4.2) (2023-09-16)
 
 
